@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfiguration {
 	private String headings;
 	private String outputFormat;
+	private String exceptionFormat;
 
 	public String getHeadings() {
 		return headings;
@@ -25,6 +26,14 @@ public class AppConfiguration {
 
 	public void setOutputFormat(String outputFormat) {
 		this.outputFormat = outputFormat;
+	}
+
+	public String getExceptionFormat() {
+		return exceptionFormat;
+	}
+
+	public void setExceptionFormat(String exceptionFormat) {
+		this.exceptionFormat = exceptionFormat;
 	}
 
 }

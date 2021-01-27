@@ -1,2 +1,3 @@
 headings: "h1, h2, h3, h4, h5, h6, h7"
 outputFormat: "&lt;%s&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;%s<br>&lt;\\%s&gt<br>"
+exceptionFormat: "%s: %s<br>"

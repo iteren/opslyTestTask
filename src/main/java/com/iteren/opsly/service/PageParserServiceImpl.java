@@ -1,5 +1,7 @@
 package com.iteren.opsly.service;
 
+import java.net.UnknownHostException;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -19,6 +21,8 @@ public class PageParserServiceImpl implements PageParserService {
 		Document doc = null;
 		try {
 			doc = Jsoup.connect(pageUrl).get();
+		} catch (UnknownHostException e) {
+			return "UnknownHostException: " + e.getMessage();
 		} catch (Exception e) {
 			Throwable cause = e.getCause();
 			return cause == null ? e.getMessage() : e.getMessage() + "<br>" + cause.getMessage();
