@@ -1,0 +1,27 @@
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function parseHtmlPage() {
+			var inUrl = document.getElementById('inUrl');
+			var output = document.getElementById('output');
+			$.ajax({
+				type : "POST",
+				url : '/rest/parsePage',
+				data : JSON.stringify({
+					url : inUrl.value
+				}),
+				contentType : "application/json; charset=utf-8",
+				success : function handleResponse(resp) {
+					output.innerHTML = resp;
+				},
+				error : function handleResponse(resp) {
+					output.innerHTML = resp.responseText;
+				}
+			});
+		}
+	</script>
+
+	<input type="text" id="inUrl">
+	<button type="button" id="btn" onclick="parseHtmlPage()">Parse Page</button>
+	<div id="output"></div>
+</body>
